@@ -1,0 +1,39 @@
+a) Commenting out the using namespace std; from both .cpp files.
+
+ERRORS (same error appears several times):
+
+unknown type name 'string'
+-> fixed this with std::string
+
+use of undeclared identifier 'cout'
+-> fixed this with std::cout
+
+use of undeclared identifier 'endl'
+-> fixed this with std::endl
+
+use of undeclared identifier 'cin'
+->fixed this with std::cin
+
+All from the above (string, cin, cout, endl) belong to the
+C++ standard library, i.e. they are from the std namespace. 
+We cannot use them if we don't "define"/specify the namespace at
+the beginning (using namespace std;) or put the "std::" before 
+every one of them, to remind that their type name is the one
+belonging to the std namespace. 
+
+b) Removing Critter:: from setName() from Critter.cpp.
+
+error: use of undeclared identifier 'name'
+
+This error occurs because we don't specify which class setName()
+belongs to. In Critter.h, the class Critter is defined. Within the
+class, we can see that name is private. So, if we remove Critter:: 
+from the method definition, we will get the error presented above
+because the compiler will not recognize the variable name, since it 
+was declared inside the class Clitter as private => can be accessed only 
+from within the specific class.
+
+If we don't want to put Critter:: back, a possible (not optimal) solution
+is defining the setName() method directly inside the Critter class 
+in the Critter.h file (could also make name public). But it is much better 
+to add Critter:: back!  =) 
