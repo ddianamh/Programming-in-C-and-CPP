@@ -2,8 +2,6 @@
 //  main.c
 //  a1_p1
 //
-//  Created by Diana H on 06.09.2022.
-//
 
 #include <stdio.h>
 int main() {
